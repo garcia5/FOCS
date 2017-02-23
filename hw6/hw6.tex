@@ -1,0 +1,170 @@
+\documentclass[]{article}
+\usepackage{datetime}
+\usepackage{color,array,graphics}
+\usepackage{enumerate}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bbm}
+
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.75in}
+
+\addtolength{\topmargin}{-.875in}
+\addtolength{\textheight}{1.75in}
+\voffset0.0in
+
+\def\OR{\vee}
+\def\AND{\wedge}
+\def\imp{\rightarrow}
+\def\math#1{$#1$}
+\def\mand#1{$$#1$$}
+\def\mld#1{\begin{equation}#1\end{equation}}
+\def\eqar#1{\begin{eqnarray}#1\end{eqnarray}}
+\def\eqan#1{\begin{eqnarray*}#1\end{eqnarray*}}
+\def\cl#1{{\cal #1}}
+
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+\DeclareSymbolFont{AMSb}{U}{msb}{m}{n}
+\DeclareMathSymbol{\N}{\mathbin}{AMSb}{"4E}
+\DeclareMathSymbol{\Z}{\mathbin}{AMSb}{"5A}
+\DeclareMathSymbol{\R}{\mathbin}{AMSb}{"52}
+\DeclareMathSymbol{\Q}{\mathbin}{AMSb}{"51}
+\DeclareMathSymbol{\I}{\mathbin}{AMSb}{"49}
+\DeclareMathSymbol{\C}{\mathbin}{AMSb}{"43}
+
+
+
+\begin{document}
+Alexander Garcia
+
+13 October 2016
+
+661534755
+
+\centerline{\bf \Large Assignment 6}
+
+\medskip
+
+\noindent (1) $GCD(2250,1200)$
+
+Use Euclid's Theorem to reduce the statement down to simpler terms
+
+$GCD(m,n) = GCD(m, rem(m,n))$ \\
+
+$GCD(1200,2250) = GCD(1200, rem(1200,2250)) = GCD(1200, 1050)$
+
+$GCD(1050,1200) = GCD(1050, rem(1050,1200)) = GCD(1050,150)$
+
+$GCD(150,1050) = GCD(150, rem(150,1050)) = GCD(150,0)$
+
+Since $GCD(n, 0) = 0$, then $GCD(2250,1200) = \textbf{150}$ \\
+
+According to Bazoot's Theorem, $GCD(m,n) = $ the smallest value of $ms+nt$, where $s,t \in \Z$
+
+$150 = 2250s + 1200t$
+
+$\textbf{s = -9, t = 17}$ \\
+
+
+
+\noindent (2) $$f(n) = \sum_{i=1}^{n}{i2^i}$$
+
+This translates to 
+
+$$\int_{1}^{n}{x2^x dx}$$
+
+$dv = 2^x dx, u= x$
+
+$v = \frac{2^x}{ln(2)}, du = 1$
+
+$$\int_{1}^{n}{x2^x dx} = \frac{x2^x}{ln(2)} - \frac{1}{ln(2)}\int_{1}^{n}{2^x dx}$$
+
+$$\frac{x2^x}{ln(2)} - \frac{1}{ln(2)} \frac{2^x}{ln(2)}$$
+
+$$\frac{2^x(xln(2)-1)}{ln(2)^2} | ^{n} _{1}$$
+
+To calculate the lower bound we substitute $n+1$ for $n$, as this integral will always be slightly less than the true summation
+
+$$\frac{2^{n+1}((n+1)ln(2)-1)}{ln(2)^2}$$
+
+For the upper bound, we substitute $m-1$ for $m$, which in this case, is given as 1
+
+$$\frac{2^0(0ln(2)-1)}{ln(2)^2} = 0$$
+
+As $n$ approaches $\infty$, the summation will also approach $\infty$, as an exponential increase over a constant will continuously increase.
+
+$\theta(n2^n)$
+
+\newpage 
+
+\noindent (3) (a) Boys woo girls
+
+\begin{tabular}{ c | c | c }
+	$g_1$ & $g_2$ & $g_3$ \\ \hline
+	$b_2, b_3$ & $b_b1$ & \\
+\end{tabular}
+
+$g_1$ rejects $b_2$
+
+$b_2$ goes to his next choice \\
+
+\begin{tabular}{ c | c | c }
+	$g_1$ & $g_2$ & $g_3$ \\ \hline
+	$b_3$ & $b_1$ & $b_2$ \\
+\end{tabular}
+
+We have found a stable set of marriages.
+
+The total regret for the boys: $0+1+0 = 1$
+
+And for the girls: $2+2+1 = 5$ \\
+
+(b) Girls woo boys
+
+\begin{tabular}{cl | c | c }
+	$b_1$ & $b_2$ & $b_3$ \\ \hline
+	$g_1$ & $g_2$ & $g_3$\\
+\end{tabular}
+
+We already have a stable set of marriages.
+
+The total regret for the boys: $1+2+2 = 5$
+
+And for the girls: $0+0+0 = 0$ \\
+
+\noindent (4) How many subsets of size $n+1$ can you get from a the set $\{1,2,... ,2n\}$ where $n = 100$
+
+(a) In this case, we are dealing with $n+1$ items that can be chosen from $2n$ items. Each time you choose a number from the set of $2n$ items, it cannot be used again in the same set of $n+1$ items. So, the set of size $n+1$ is made up of elements $x_1, x_2, x_3, ... , x_{n+1}$. If you start filling up this set at $x_1$, you have $2n$ choices. Since you cannot reuse a number, the number of choices you have for $x_2$ is $2n-1$. This trend continues down until term $x_{n+1}$, where you would have $2n - n$ choices, or $n$ choices. According to the product rule for sets of this nature, The total number of choices for a set of size $n+1$ would be \textbf{$2n * 2n-1 * 2n-2 * ... * n$}.
+
+Since this is approximately equal to $n!$, you can approximate this result using a summation.
+We start by taking the natural log of $n!$, as this is more easily translated into a summation
+
+$\log(n!) = \sum_{i = 1}^{n}{\log i}$
+
+$\sum_{i = 1}^{n}{\log i} \approx \int_{1}^{n}{dx \log x}$
+
+$x \log x - x | ^{n} _{1}$
+
+(b) When making a selection for the value of element $x_{n+1}$, you will have already selected $n$ elements previously for the subset. Since you cannot repeat values, you are left with $n$ elements in the full set ($\{1,2,...,2n\}$), since $2n-n = n$. In the case that no two numbers are next to each other already (i.e. 2 and 3, or 67 and 68), there are two possibilities. Either you have the set of all even numbers $ < 2n$, or the set of all odd numbers $ < 2n$. But, you still have one selection left to make. If you have the even set, you are left with only odd numbers, enforcing the fact that there are two adjacent numbers. The same goes for the odd set, you are left with only even numbers to choose from. Therefore, since $GCD(k, k+1) = 1$, it must be true that $\exists x, y \in \mathbbm{S}$ such that $GCD{x, y} = 1$ \\
+
+\noindent (5) \textbf{Claim}: $\forall n \geq 3, \exists p_u; p_u = ( b_{j<n}, g_{i<n})$
+
+\textbf{Base Case}: $n = 3$
+
+\begin{tabular}{ c | c | c || c | c | c}
+	$b_1$ & $b_2$ & $b_3$  & $g_1$ & $g_2$ & $g_3$\\ \hline
+	$g_1$ & $g_2$ & $g_3$ & $b_2$ & $b_1$ & $b_3$ \\
+	$g_2$ & $g_3$ & $g_2$ & $b_1$ & $b_3$ & $b_2$ \\
+	$g_3$ & $g_1$ & $g_1$ & $b_3$ & $b_2$ & $b_1$ \\
+\end{tabular}
+
+In this case, $p_{u1}$ would be $(b_3, g_1)$, and $p_{u2}$ would be $(b_2, g_2)$. Both of these pairs have one partner that is matched up with their least favorable partner, making the pair unstable.
+
+\textbf{Assume} the claim is true
+
+For a "dating pool" of size $n \geq 3$, all that is done to the matching is introduce more options. From this pool, you can select at random 3 boys and 3 girls, and because of the assumption we made, we can assume that we will find at least one unstable matching within that group. After this, all that needs to be done is to assign more pairings, such that the rest of the people have marriages. However, doing this will not affect the result of the original unstable marriage. Therefore, as long as you can remove a subset of 3 boys and 3 girls from a set of $n$ random boys and $n$ random girls, an unstable marriage can be found for the $n*n$ set.
+
+
+\end{document}

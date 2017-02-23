@@ -1,0 +1,245 @@
+\documentclass[11pt]{article}
+\usepackage{color, array, graphics}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{mathtools}
+\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+
+%Symbol shortcuts
+\def\OR{\vee}
+\def\AND{\wedge}
+\def\imp{\rightarrow}
+
+%Aesthetics
+\addtolength{\oddsidemargin}{-.5in}
+\addtolength{\evensidemargin}{-.5in}
+
+\addtolength{\topmargin}{-.5in}
+
+%Header
+\textbf{Alexander Garcia}
+
+24 February 2017
+
+\begin{document}
+
+\begin{enumerate}
+
+	\item Question 1
+
+		(a) $-17\ mod\ 4 = 3$
+
+		$1 = a *_4 -17 (mod\ 4)$
+
+		$1 = a * _4 3$
+
+		$(3a)(mod\ 4) = 1$
+
+		$a = 3$\\
+
+		In this case, $m$ must equal $4$, since it is the modulo of the original value for
+		``$b$''. The equation can then be easily solved for $a$, which could be 3. \\
+
+		(b) $-17 \div 4 = -5\ rem\ 3$
+
+		This follows from the definition of the modulo operator, where when $a\ mod\ b$,
+		this means that $a = bq + r$, where $r$ is always a positive integer. Since $r$ must
+		be positive, we obtain the value $-20$ from $bq$, giving us the smallest positive $r$.
+		Therefore, $a = 3$. \\
+
+		(c) $a \equiv -17\ (mod\ 4)$
+
+		$4 | (a+17)$
+
+		$a = 3$ \\
+		\newpage
+		
+
+	\textbf{Alexander Garcia}	
+
+	24 February 2017
+
+	\item Question 2
+		
+		$a \equiv b\ (mod\ m)$ 
+
+		\begin{tabular}{ll}
+			$m\ |\ a-b$ & Definition of congruency \\
+
+			$\exists c, mc = a-b$ & Definition of the ``divisible`` operator \\ 
+
+			$p = gcd(a,m); q = gcd(b,m)$ & Assignment of gcd operations \\
+
+			$\frac{a}{p} = \frac{mc}{p} + \frac{b}{p}$ & Rewriting of ``divisible''
+			operator. Here, $\frac{a}{p}$ and $\frac{m}{p}$ are both integers. \\
+
+			$\frac{b}{p} = \frac{-a}{p} + \frac{mc}{p}$ & Reorganization of expression \\
+
+		\end{tabular} \\
+
+		Since the two parts of the equation that make up $\frac{b}{p}$ are both integers,
+		$\frac{b}{p}$ must be an integer. Therefore, $p\ |\ b$. In addition, $p \leq q$,
+		since $q$ is the largest number that can divide $b$. \\
+
+		\begin{tabular}[]{ll}
+			$\frac{a}{q} = \frac{mc}{q} + \frac{b}{q}$ & Rewriting of ``divisible''
+			operator. Here, $\frac{mc}{q}$ and $\frac{b}{q}$ are both whole numbers. \\
+
+			
+		\end{tabular} \\
+
+		Again, the two parts making up $\frac{a}{q}$ are integers, so $\frac{a}{q}$ must be
+		an integer. This time, however, $q \leq p$, for the same reason that $p \leq q$. The
+		only possible conclusion then, is that $p &=& q$. \\
+
+		$\therefore gcd(a,m) &=& gcd(b,m)$ \\
+
+		\newpage
+
+		\textbf{Alexander Garcia}
+
+		24 February 2017
+
+%redo the second half of the table to be the correct format so that it's not aids to work with
+	\item Question 3
+		
+		(a) 
+		\begin{tabular}{ll}
+			$gcd(124,323) = d, d \in \mathbb{Z}$ & Representation of $gcd$ \\
+
+			$d = sa + tb$ & Bezout's Theorem \\ 
+
+			Now begin stepping through the given algorithm \\
+
+			Representation of gcd & Reformatting of representation \\
+
+			\hline 
+
+			$323 = 2 * 124 + 75$ & $75 = 323 - (2 * 124)$\\
+
+			$124 = 1 * 75 +49$ & $49 = 124 - (1 * 75)$\\
+
+			$75 = 1 * 49 + 26$ & $26 = 75 - *1*49)$\\
+
+			$49 = 1 * 26 + 23$ & $23 = 49 - (1 * 26)$\\
+
+			$26 = 1 * 23 + 3$ & $3 = 26 - (1 * 23)$\\
+
+			$23 = 7 * 3 + 2$ & $2 = 23 - (7 * 3)$\\
+
+			$3 = 1 * 2 + 1$ & $1 = 3 - (1 * 2)$\\
+
+			$2 = 2 * 1$ & $gcd(124, 323) = 1$ \\
+
+		\end{tabular} \\
+
+		These two numbers are relatively prime since their gcd = 1. We must now go ``backwards''
+		through these steps and find the coefficients associated with the two numbers ($s$, $t$)
+		to make $124s + 323t = 1$ true.
+
+		\begin{tabular}{ll}
+			$1 = 3 - (1 * 2)$ & Starting premise\\
+
+			$2 = 23 - (7 * 3)$ & Starting premise\\
+
+			$1 = 3 - 1 * (23 - 7 * 3)$ & $8 * 3 - 1 * 23$ \\
+
+			$8 * (26 - 1 * 23) - 1 * 23$ & $8 * 26 - 9 * 23$ \\
+
+			$8 * 26 - 9 * (49 - 1 * 26)$ & $17 * 26 - 9 * 49$ \\
+
+			$17 * (75 - 1 * 49) - 9 * 49$ & $17 * 75 - 26 * 49$ \\
+
+			$17 * 75 - 26 * (124 - 1 * 75)$ & $43 * 75 - 26 * 124$ \\
+
+			$43 * (323 - 2 * 124) - 26 * 124$ & $43 * 323 - 112 * 124$ \\
+
+		\end{tabular}\\
+
+		The final item in the table contains both of the original numbers,
+		and the expression is equal to 1 the whole way down. Therefore, the Bezout
+		Coefficients of 124,323 are -112, 43 respectively. \\
+
+		\newpage
+
+		\textbf{Alexander Garcia}
+
+		24 February 2017 \\
+
+		(b) This calculation is done through the same steps as part (a).
+		
+		\begin{tabular}{ll}
+			$gcd(3457, 4669) = d, d \in \mathbbm{Z}$ & Representation of $gcd$ \\
+
+			\hline
+
+			$4669 = 1 * 3457 + 1212$ & $1212 = 4669 - 1 * 3457$ \\
+
+			$3457 = 2 * 1212 + 1033$ & $1033 = 3457 - 2 * 1212$ \\
+
+			$1212 = 1 * 1033 + 179$ & $179 = 1212 - 1 * 1033$ \\
+
+			$1033 = 5 * 179 + 138$ & $138 = 1033 - 5 * 179$ \\
+
+			$179 = 1 * 138 + 41$ & $41 = 179 0 1 * 138$ \\
+
+			$138 = 3 * 41 + 15$ & $15 = 138 - 3 * 41$ \\
+
+			$41 = 2 * 15 + 11$ & $11 = 41 - 2 * 15$ \\
+
+			$15 = 1 * 11 + 4$ & $4 = 15 - 1 * 11$ \\
+
+			$11 = 2 * 4 + 3$ & $4 = 11 - 2 * 4$ \\
+
+			$4 = 1 * 3 + 1$ & $1 = 4 - 1 * 3$ \\
+
+			$3 = 3 * 1$ & $gcd(3457, 4669) = 1$ \\
+			
+		\end{tabular}\\
+
+		Now repeat the steps from before, going backwards to find the Bezout Coefficients.
+
+		\begin{tabular}{ll}
+
+			All expressions in the table are equal to 1. \\
+
+			$1 = 4 - 1 * (11 - 2 * 4)$ & $3 * 4 - 1 * 11$ \\
+
+			$3 * (15 - 1 * 11) - 1 * 11$ & $3 * 15 - 4 * 11$ \\
+
+			$3 * 15 - 4 * (41 - 2 * 15)$ & $11 * 15 - 4 * 41$ \\
+
+			$11 * (138 - 3 * 41) - 4 * 41$ & $11 * 138 - 37 * 41$ \\
+
+			$11 * 138 - 37 * (179 - 1 * 138)$ & $48 * 138 - 37 * 179$ \\
+
+			$48 * (1033 - 5 * 179) - 37 * 179$ & $48 * 1033 - 277 * 179$ \\
+			
+			$48 * 1033 - 277 * (1212 - 1 * 1033)$ & $325 * 1033 - 277 * 1212$ \\
+
+			$325 * (3457 - 2 * 1212) - 277 * 1212$ & $325 * 3457 - 927 * 1212$ \\
+
+			$325 * 3457 - 927 * (4669 - 1 * 3457) & 1252 * 3457 - 927 * 4669 = 1$ \\
+
+		\end{tabular}
+
+		Bazout Coefficients: $s = 1252, t = -927$ \\ 
+
+		\newpage
+
+		\textbf{Alexander Garcia}
+
+		24 February 2017 \\
+
+	\item Question 4
+
+		\begin{tabular}{ll}
+			$1 = 1$ \\
+		\end{tabular}
+
+\end{enumerate}
+
+\end{document}

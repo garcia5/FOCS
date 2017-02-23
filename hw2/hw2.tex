@@ -1,0 +1,286 @@
+\documentclass[]{article}
+\usepackage{datetime}
+\usepackage{color,array,graphics}
+\usepackage{enumerate}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bbm}
+\usepackage{tabu}
+
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.75in}
+
+\addtolength{\topmargin}{-.875in}
+\addtolength{\textheight}{1.75in}
+\voffset0.0in
+
+\def\OR{\vee}
+\def\AND{\wedge}
+\def\imp{\rightarrow}
+\def\math#1{$#1$}
+\def\mand#1{$$#1$$}
+\def\mld#1{\begin{equation}#1\end{equation}}
+\def\eqar#1{\begin{eqnarray}#1\end{eqnarray}}
+\def\eqan#1{\begin{eqnarray*}#1\end{eqnarray*}}
+\def\cl#1{{\cal #1}}
+
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+\DeclareSymbolFont{AMSb}{U}{msb}{m}{n}
+\DeclareMathSymbol{\N}{\mathbin}{AMSb}{"4E}
+\DeclareMathSymbol{\Z}{\mathbin}{AMSb}{"5A}
+\DeclareMathSymbol{\R}{\mathbin}{AMSb}{"52}
+\DeclareMathSymbol{\Q}{\mathbin}{AMSb}{"51}
+\DeclareMathSymbol{\I}{\mathbin}{AMSb}{"49}
+\DeclareMathSymbol{\C}{\mathbin}{AMSb}{"43}
+
+
+
+\begin{document}
+Alexander Garcia
+
+9 February 2017
+
+661534755
+
+\centerline{\bf \Large Homework 2}
+
+\medskip
+
+\noindent (1) (a) 
+
+$P(x) := x$ drives a Lamborghini
+
+$Q(x) := x$ has received a speeding ticket \\
+
+\begin{tabular}{ l l }
+
+	1. $P(Jim)$ & \textbf{Premise} \\
+
+	2. $\forall x (P(x) \imp Q(x))$ & \textbf{Premise} \\
+
+	3. $Q(Jim)$ & \textbf{Modus Tollens (3) \& (2)} \\
+
+	4.$Jim \in D_{Students}$ & \textbf{Premise} \\
+
+	5. $\therefore \exists x \in D_{Students} (Q(x))$ & \textbf{Existential Generalization}\\
+	
+\end{tabular} \\
+
+(b)
+
+$P(x) := x$ is a thought-provoking movie
+
+$Q(x) := x$ was directed by Clint Eastwood
+
+$R(x) := x$ is a movie about a boxer \\
+
+\begin{tabular}{l l}
+
+	1. $\forall x (Q(x) \imp P(x))$ & \textbf{Premise} \\
+
+	2. $\exists x (Q(x) \AND R(x))$ & \textbf{Premise} \\
+
+	3. $\exists x R(x)$ & \textbf{Simplification} \\
+
+	4. $\exists x Q(x)$ & \textbf{Simplification} \\
+
+	5. $\exists x P(x)$ & \textbf{Modus Tollens (1) \& (4)} (if (1) is $\forall x$ is true, $\exists x$ is true) \\
+
+	6. $\therefore \exists x P(x) \AND R(x)$ & \textbf{Conjunction from (3) \& (5)} \\
+
+\end{tabular} \\
+
+(c)
+
+$P(x) := x$ is enrolled at RPI
+
+$Q(x) := x$ has lived in in a dormitory \\
+
+\begin{tabular}{l l}
+
+	1. $\forall x(P(x) \imp Q(x))$ & \textbf{Premise} \\
+
+	2. $\neg Q(Ryan)$ & \textbf{Premise} \\
+
+	3. $\forall x (\neg Q(x) \imp \neg P(x))$ & \textbf{Contraposition of (1)} \\
+
+	4. $Ryan \in D_x$ & \textbf{Premise} \\
+
+	5. $\therefore \neg P(Ryan)$ & \textbf{Modus Tollens of (2) \& (3)} \\
+
+\end{tabular} \\
+
+(d) 
+
+$P(x) := x$ is a Kawasaki motorcycle
+
+$Q(x) := x$ is exciting to drive
+
+\begin{tabular}{l l}
+
+	1. $P(x) \imp Q(x)$ & \textbf{Premise} \\
+
+	2. $\neg P(Isabella's)$ & \textbf{Premise} \\
+
+	3. $\therefore \neg Q(Isabella's)$ &\textbf{Is FALSE due to the fallacy of denying hypothesis} \\
+
+\end{tabular}
+
+\newpage
+
+Alexander Garcia \\
+
+\noindent (2) 
+
+2. It is not explicitly stated that $c \in D_x$ (this is probably fine, but just in case)
+
+3. It is not explicitly stated that $\neg Q(c)$, so we cannot be sure that $P(c)$ holds
+
+5. It is not explicitly stated that $\neg P(c)$, so we cannot be sure that $Q(c)$ holds
+
+\newpage
+
+Alexander Garcia \\
+
+\noindent (3)
+
+$P(x) := x$ is a rational number
+
+$\forall x, y \in \Q (P(x) \AND P(y)) \imp P(x*y)$ \\
+
+\begin{tabular}{l l}
+	$x = \frac{a}{b}; a, b \in \Z$ & \textbf{Definition of a rational number} \\
+
+	$y = \frac{m}{n}; m, n \in \Z$ & \textbf{Definition of a rational number} \\
+
+	$xy = \frac{am}{bn}$ & \textbf{Rules of algebra} \\
+
+	$am \in \Z$ & \textbf{Under multiplication closure} \\
+
+	$bn \in \Z$ & \textbf{Under multiplication closure} \\
+
+	$\frac{\Z}{\Z} \in \Q$ & \textbf{Definition of a rational number} \\
+
+	$\therefore xy \in \Q$ & \textbf{q.e.d.} \\
+\end{tabular}
+
+\newpage
+
+Alexander Garcia \\
+
+\noindent (4)
+
+$P(x) := x$ is an even number
+
+$\forall m, n \in \Z (P(m*n) \imp (P(m) \OR P(n))), $\\
+
+\begin{tabular}{l l}
+
+	$\forall m, n \in \Z ( (\neg P(m) \AND \neg P(n)) \imp \neg P(m*n) )$ & \textbf{Contrapositive of initial proposition}\\
+
+	$m = 2k + 1, k \in \Z$ & \textbf{Definition of an odd number} \\
+
+	$n = 2c + 1, c \in \Z$ & \textbf{Definition of an odd number} \\
+
+	$mn = 4kc + 2c + 2k + 1$ & \textbf{Distributive property} \\
+
+	$mn = 2(2kc + c + k) + 1$ & \textbf{Rule of algebra} \\
+	
+	$A = 2kc + c + k$ & \textbf{Redefinition} \\
+
+	$A \in \Z$ & \textbf{Under multiplication closure} \\
+
+	$mn = 2A + 1$ & \textbf{Substitution} \\
+
+	$\therefore \neg P(mn)$ & \textbf{Defintion of an even number} \\
+
+	\textbf{q.e.d.} \\
+
+\end{tabular}
+
+\newpage
+
+Alexander Garcia \\
+
+\noindent (5)
+
+$P(x) := x$ is odd \\
+
+\begin{tabular}{l l}
+
+	$( (P(x) \AND \neg P(y)) \OR (\neg P(x) \AND P(y)) ) \imp P(5x + 5y), x, y \in \Z$ & \textbf{Premise} \\
+
+	\hline \\
+
+	$(P(x) \AND \neg P(y)) \imp P(5x + 5y)$ & \textbf{Assumption WLOG} \\
+
+	$x = 2k + 1, k \in \Z$ & \textbf{Definition of an odd number} \\
+
+	$y = 2m, m \in \Z$ & \textbf{Definition of an even number} \\
+
+	$5(2k + 1) + 5(2m)$ & \textbf{Substitution} \\
+
+	$5(2k + 1) + 5(2m) = 2c + 1, c \in \Z$ & \textbf{Definition of an odd number} \\
+
+	$10k + 5 + 10m = 2c + 1$ & \textbf{Distributive property} \\
+
+	$10k + 10m + 4 = 2c$ & \textbf{Rule of algebra} \\
+
+	$2(5k + 5m + 2) = 2c$ & \textbf{Factoring} \\
+
+	$A = 5k + 5m + 2, A \in \Z$ & \textbf{Redefinition} \\
+	
+	$2A = 2c; A, c \in \Z$ & \textbf{Substitution} \\
+
+	$2 = 2$ & \textbf{Simplification} \\
+
+	$\therefore P(x) \AND \neg P(y) \imp P(5x + 5y)$ & \textbf{q.e.d.} \\
+
+\end{tabular} \\
+
+The above proof is sufficient for the entire statement. If the roles of $x$ and $y$ are reversed, the proof is still the same. Thus, the first assumption is valid under the idea of "without loss of generality".
+
+\newpage
+
+Alexander Garcia \\
+
+\noindent (6) Idea: Only the last 2 digits of $n$ are important to the last 2 digits of $n^2$ \\
+
+\begin{tabular}{c c}
+
+	$n$ & $n^2$ (last 2 digits) \\
+
+	\hline \\
+
+	00 & 00 \\
+	01 & 01 \\
+	02 & 04 \\
+	03 & 09 \\
+	04 & 16 \\
+	05 & 25 \\
+	06 & 36 \\
+	07 & 49 \\
+	08 & 64 \\
+	09 & 81 \\
+	10 & 00 \\
+	11 & 21 \\
+	12 & 44 \\
+	13 & 69 \\
+	14 & 96 \\
+	15 & 25 \\
+	16 & 56 \\
+	17 & 89 \\
+	18 & 24 \\
+	19 & 61 \\
+	20 & 00 \\
+	21 & 41 \\
+	22 & 84 \\
+	23 & 29 \\
+	24 & 76 \\
+\end{tabular}
+
+From this point to 50 ($25^2 \rightarrow 49^2$), these values repeat in reverse order. This is because $(50-n)^2 = 2500-100n+n^2$. For $25 \leq n < 50$, this means that $n^2$ and $(50-n)^2$ will have the same final digits, since only the 100s place will be affected by $2500-100n$. From $50 \leq n < 100$, the entire pattern from $0^2 \rightarrow 49^2$ repeats itself. In this case, we take the relation $(50+n)^2 = 2500 + 100n + n^2$. Again, the only part of the sum that affects the last 2 digits is $n^2$, making $(50+n)^2 = n^2$. Therefore, the only unique combinations of the final 2 digits are contained within the above table. Repeats were left in the table to maintain continuity.
+
+\end{document}

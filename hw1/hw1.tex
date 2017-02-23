@@ -1,0 +1,166 @@
+\documentclass[]{article}
+\usepackage{datetime}
+\usepackage{color,array,graphics}
+\usepackage{enumerate}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{tabu}
+
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.75in}
+
+\addtolength{\topmargin}{-.875in}
+\addtolength{\textheight}{1.75in}
+\voffset0.0in
+
+\def\OR{\vee}
+\def\AND{\wedge}
+\def\imp{\rightarrow}
+\def\math#1{$#1$}
+\def\mand#1{$$#1$$}
+\def\mld#1{\begin{equation}#1\end{equation}}
+\def\eqar#1{\begin{eqnarray}#1\end{eqnarray}}
+\def\eqan#1{\begin{eqnarray*}#1\end{eqnarray*}}
+\def\cl#1{{\cal #1}}
+
+\DeclareSymbolFont{AMSb}{U}{msb}{m}{n}
+\DeclareMathSymbol{\N}{\mathbin}{AMSb}{"4E}
+\DeclareMathSymbol{\Z}{\mathbin}{AMSb}{"5A}
+\DeclareMathSymbol{\R}{\mathbin}{AMSb}{"52}
+\DeclareMathSymbol{\Q}{\mathbin}{AMSb}{"51}
+\DeclareMathSymbol{\I}{\mathbin}{AMSb}{"49}
+\DeclareMathSymbol{\C}{\mathbin}{AMSb}{"43}
+
+
+\begin{document}
+Alexander Garcia
+
+26 January 2017
+
+661534755
+
+\centerline{\bf \Large Homework 1}
+
+\medskip
+
+\noindent (1) (a) If you miss the final exam, then you do not pass the course. \\
+
+(b) If you have the flu, then you do not pass the course. Or, if you miss the final exam, you do not pass the course. \\
+
+(c) You have the flu and miss the final exam, or you do not miss the final exam and pass the course. \\
+
+\newpage
+
+Alexander Garcia\\
+
+\noindent (2) (a)
+\begin{tabular}{c c | c c | c}
+	\textbf{P} & \textbf{Q} & $P \imp Q$  & $Q \leftrightarrow \neg P$ & $(P \imp Q) \AND (Q \leftrightarrow \neg P)$\\
+	F & T & T & T & T\\
+\end{tabular} \\
+
+In this case, $P$ being false will guarantee the first half to be true ($P \imp Q$). Setting $Q = \neg P$ makes the biconditional true, as the biconditional requires each term to be equal. Both of the individual propositons being true makes the compound as a whole true.
+\\
+
+(b) This proposition is not satisfiable. Since it is a series of propositions joined by $\AND$, each of the individual pieces much be true in order to make the compound true. However, there are contradicting propositions that make the whole statement impossible. 
+
+$P \OR \neg R$ means that $P$ must be true, or $R$ must be false. In $R \AND S$, $R$ must be true for the statement to be true. In $\neg S \AND \neg P$, $P$ must be false for the statement to be true. Therefore, for the first statement to be true ($P \OR \neg R$), one of the two following statements must be false. Therefore, there is no arrangement that makes the compound proposition true, making it not satisfiable.\\
+
+(c)
+\begin{tabular}{c c | c c c c | c}
+	\textbf{P} & \textbf{Q} & 
+	$P \imp Q$ & $Q \imp P$ & $P \leftrightarrow Q$ & $\neg(P \imp Q)$ & 
+	$(P \leftrightarrow Q) \imp \neg(P \imp Q)$ \\
+	F & F & T & T & T & F & F \\
+	F & T & T & F & F & F & T \\
+	T & F & F & T & F & T & T \\
+	T & T & T & T & T & F & F \\
+\end{tabular} \\
+
+As is clear from the truth table, as long as $P$ and $Q$ are different, the proposition is true. This makes it satisfiable. \\
+\newpage
+
+Alexander Garcia\\
+
+\noindent (3)
+(a)
+$\neg[(\neg p \AND (p \OR q)) \imp q]$
+
+$(\neg p \AND (p \OR q)) \AND \neg q$ \textbf{Logical equivalence for conditional statement}
+
+$\neg p \AND \neg q \AND (p \OR q)$ \textbf{Associative}
+
+$\neg p \AND [(\neg q \AND p) \OR (\neg q \AND q)]$ \textbf{Distributive}
+
+$\neg p \AND [(\neg q \AND p) \OR F]$ \textbf{Negation}
+
+$\neg p \AND (\neg q \AND p)$ \textbf{Identity}
+
+$(\neg p \AND \neg q) \AND (\neg p \AND p)$ \textbf{Distributive}
+
+$(\neg p \AND \neg q) \AND F$ \textbf{Negation}
+
+$F$ \textbf{Domination}\\
+
+(b) $\neg [((\neg p \OR q) \AND (\neg q \OR r)) \imp (p \imp r)]$
+
+$((\neg p \OR q) \AND (\neg q \OR r)) \AND \neg(p \imp r)$ \textbf{Logical equivalence for conditional statement}
+
+$((\neg p \OR q) \AND (\neg q \OR r)) \AND (p \AND \neg r)$ \textbf{Logical equivalence for conditional statement}
+
+$p \AND (\neg p \OR q) \AND (\neg q \OR r) \AND \neg r$ \textbf{Associative}
+
+$[(p \AND \neg p) \OR (p \AND q)] \AND (\neg q \OR r) \AND \neg r$ \textbf{Distributive}
+
+$[F \OR (p \AND q)] \AND (\neg q \OR r) \AND \neg r$ \textbf{Negation}
+
+$(p \AND q) \AND (\neg q \OR r) \AND \neg r$ \textbf{Domination}
+
+$(p \AND q) \AND [(\neg r \AND \neg q) \OR (\neg r \AND r)]$ \textbf{Distributive}
+
+$(p \AND q) \AND [(\neg r \AND \neg q) \OR F]$ \textbf{Negation}
+
+$(p \AND q) \AND (\neg r \AND \neg q)$ \textbf{Domination}
+
+$p \AND \neg r \AND q \AND \neg q$ \textbf{Associative}
+
+$p \AND \neg r \AND F$ \textbf{Negation}
+
+$F$ \textbf{Domination}
+
+\newpage
+
+Alexander Garcia\\
+
+\noindent (4) (a) False. Solving the basic equation $x + 3 = 10$ gives the result $x = 7$. Since 7 is not in the domain of $x$, the statement is false. \\
+
+(b) True. Given that the domain of $y$ is limited to $\{1, 2, 3\}$, $y+ 3$ cannot be greater than 7. \\
+
+(c) True. The statement says that there is at least one $x$ which when squared, is less than every $y + 1$. A value of 1 for $x$ is less than $y + 1$ for every $y$ in the domain. \\
+
+(d) False. Since the domain of $x$ is $\{1, 2, 3, 4, 5\}$, the statement is false for every $x \geq 4$ in the set, no matter the $y$ chosen.
+
+\newpage
+
+Alexander Garcia\\
+
+\noindent (5) (a) False. $5 = 5 / 5; (x, y = 5)$ \\
+
+(b) True.
+
+$y^4 - x < 16$
+
+$y ^ 4 - 16 < x$
+
+Choose $y = 1$
+
+$-15 < x$
+
+Because the domain of $x$ is the set of all integers $(\geq 0)$, $x$ cannot be smaller than the result.\\
+
+(c) True. Because of the qualifiers, the statement means that both curves over the domain of all integers are different, or they never touch. At $x, y = 0$, $log_2(x) = -\infty$, and $y ^ 3 = 0$. At $(x, y = 1)$, $log_2(x) = 0$, and $y^3 = 1$. So from $0 \leq x, y \leq 1$, the two curves do not touch. After this point, the $y ^ 3$ curve grows at a rate of about $y ^ 2$. The $log_2(x)$ curve grows at a rate of about $\frac{1}{x}$. Because the curve that is lower at the start grows at a slower rate than the higher curve, it will never touch the higher curve.
+
+\end{document}

@@ -1,0 +1,172 @@
+\documentclass[]{article}
+\usepackage{datetime}
+\usepackage{color,array,graphics}
+\usepackage{enumerate}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bbm}
+
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.75in}
+
+\addtolength{\topmargin}{-.875in}
+\addtolength{\textheight}{1.75in}
+\voffset0.0in
+
+\def\OR{\vee}
+\def\AND{\wedge}
+\def\imp{\rightarrow}
+\def\math#1{$#1$}
+\def\mand#1{$$#1$$}
+\def\mld#1{\begin{equation}#1\end{equation}}
+\def\eqar#1{\begin{eqnarray}#1\end{eqnarray}}
+\def\eqan#1{\begin{eqnarray*}#1\end{eqnarray*}}
+\def\cl#1{{\cal #1}}
+
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+\DeclareSymbolFont{AMSb}{U}{msb}{m}{n}
+\DeclareMathSymbol{\N}{\mathbin}{AMSb}{"4E}
+\DeclareMathSymbol{\Z}{\mathbin}{AMSb}{"5A}
+\DeclareMathSymbol{\R}{\mathbin}{AMSb}{"52}
+\DeclareMathSymbol{\Q}{\mathbin}{AMSb}{"51}
+\DeclareMathSymbol{\I}{\mathbin}{AMSb}{"49}
+\DeclareMathSymbol{\C}{\mathbin}{AMSb}{"43}
+
+
+
+\begin{document}
+Alexander Garcia
+
+29 September 2016
+
+661534755
+
+\centerline{\bf \Large Assignment 4}
+
+\medskip
+
+\noindent (1) $P(n)$: $n\%k = 0 \AND \forall \: 1 < c < n, c\% \mathpzc{l} = 0$; $k, \mathpzc{l} \in \mathbbm{P}, n \geq 2$
+
+In plain English, every natural number $n$ is divisible by a prime number, and every natural number less than $n$ is also divisible by a prime number.
+
+\textbf{Proof by Strong Induction}
+
+\textbf{Assume $P(n)$} \\
+
+\textbf{Base Case}: $P(2)$: $2\%k = 0 \AND 1\% \mathpzc{l} = 0$; $k = 2, \mathpzc{l} = 1$
+
+$2\%2 = 0 \AND 1\%1 = 0$
+
+Since 1 has no positive divisior smaller than 1, this will count as a prime number in this case. \\
+
+\textbf{Prove $P(n+1)$}
+
+$(n+1) \% k = 0 \AND \forall \: 1 < c < (n+1), c \% \mathpzc{l} = 0$ \\
+
+If $(n+1)$ is already a prime number, then it is divisible by itself, a prime number, making $P(n+1)$ true.. $$(n+1) \in \mathbbm{P}$$
+$$k = n; n \% n = 0$$
+
+If $(n+1)$ is not a prime number, then it can be expressed as the product of two natural numbers that are less than it. $$(n+1) \notin \mathbbm{P}$$
+$$(n+1) = a*b; 1 < a < (n+1); 1 < b < (n+1)$$
+
+Due to our second assumption in $P(n)$, we know that $a$ and $b$ are divisible by prime numbers.
+$$a \% \mathpzc{l} = 0; b \% \mathpzc{l} = 0$$
+
+Since the factors of $(n+1)$ are divisible by primes, $(n+1)$ itself must be divisible by a prime number.
+$$(n+1)\% k = 0$$
+
+\noindent (2) $P(n)$: $n$ can be expressed as a product of primes, provided $n > 1$
+
+$Q(n)$: $\forall 1\leq k \leq n, P(n); k \in \N$
+
+\textbf{Proof by Strong Induction}
+
+\textbf{Assume} $Q(n)$
+
+By doing this, you are also assuming $P(n)$ \\
+
+\textbf{Base Case}: $Q(2): P(1) \AND P(2)$
+
+$1 = 1; 2 = 2*1$ \\
+
+\textbf{Prove} $Q(n+1)$
+
+If $(n+1)$ is prime, you are done, since the factors of $(n+1)$ are only itself and 1.
+
+If $(n+1)$ is not prime, it can be expressed as the product of two smaller numbers. 
+$$(n+1) = a*b; 1< a < (n+1), 1 < b < (n+1)$$
+
+Because of our earlier assumption ($P(n)$), $P(a)$ and $P(b)$ are both true. Since the two factors of $(n+1)$ can be expressed as a product of primes, $(n+1)$ can therefore be expressed as a combination of those two products of primes, making $Q(n+1)$ true.
+
+\newpage
+
+\noindent (3) $P(n)$: $$\sum_{i = 1}^{n}\frac{1}{\sqrt{i}} \geq \sqrt{n}$$
+
+\textbf{Proof by Induction}
+
+\textbf{Assume} $P(n)$
+
+\textbf{Base Case}: $P(1): \frac{1}{\sqrt{1}} \geq \sqrt{1}$
+
+$1 \geq 1$ \\
+
+\textbf{Prove} $P(n+1)$
+
+$$\sum_{i = 1}^{n+1}\frac{1}{\sqrt{i}} \geq \sqrt{n+1}$$
+
+$$\sum_{i = 1}^{n+1}\frac{1}{\sqrt{i}} = \sum_{i = 1}^{n}\frac{1}{\sqrt{i}} + \frac{1}{\sqrt{n+1}}$$
+
+As $\sum_{i = 1}^{n}\frac{1}{\sqrt{i}}$ is assumed to be greater than $\sqrt{n}$, we can replace the summation with $\sqrt{n}$ and replace the $=$ with $>$, as we have now made the term on the right side of the equation smaller.
+
+$$\sum_{i = 1}^{n+1}\frac{1}{\sqrt{i}} > \sqrt{n} + \frac{1}{\sqrt{n+1}} > \sqrt{n+1}$$
+
+Now we must introduce a $\sqrt{n-1}$ term to get the desired answer. We accomplish this by manipulating the rightmost two terms.
+
+$$\sqrt{n} + \frac{1}{\sqrt{n+1}} > \sqrt{n+1}$$
+
+$$\sqrt{n} \sqrt{n+1}+1 > \sqrt{n+1} \sqrt{n+1}$$
+
+$$\sqrt{n} \sqrt{n+1} > n$$
+
+$$\sqrt{n+1} > \sqrt{n}$$
+
+Which we know is true. Therefore,
+$$ \sum_{i = 1}^{n+1}\frac{1}{\sqrt{i}} \geq \sqrt{n+1}$$
+
+\noindent (4) $P(n): x+ \frac{1}{x} \in \N \imp x^n + \frac{1}{x^n} \in \N; n \geq 1$
+
+\textbf{Proof by Induction}
+
+\textbf{Assume} $P(n)$
+
+\textbf{Base Case} $P(1): x + \frac{1}{x} \in \N \imp x^1 + \frac{1}{x^1} \in \N$
+
+This is clearly true, since both sides of the implication are true. \\
+
+\textbf{Prove} $P(n+1)$
+
+For $x + \frac{1}{x} \in \N$ to hold true, the only possible value of $x$ is 1, as $\frac{1}{x}$ will only produce an integer when $x = 1$
+
+$$\forall n, 1^n+\frac{1}{1^n} = 1^{n+1} + \frac{1}{1^{n+1}}$$
+
+This is true, as both sides will always be equal to 2.
+
+\newpage
+
+\noindent (5) In a round-robin tournament of size $n$, there must exist an ordering of players such that when arranged in a straight line, a given player lost to the person in front of them, and beat the person behind them. The set of all these players can be defined as $\mathbbm{P}$, and the set of all matches can be defined as $\mathbbm{M}$. By definition, $\mathbbm{P}$ is of size $n$, and $\mathbbm{M}$ is of size $\frac{n!}{2(n-2)!}$, since each match is a group of 2 players. In this format, there are 3 general cases for adding a nother player.
+
+Case 1: The $n+1$ player loses every match.
+
+This case is rather simple, since you can simply add them on to the back of the line. Since they lost every match, the previous back must have at least one win, moving them off of the bottom. No other relationships are changed, and the rest of the order stays the same.
+
+Case 2: The $n+1$ player wins every match.
+
+This is also a simple case. This player could be added to the front of the line, since the previous best player now must have at least one loss. Again, no relationships are changed, and the rest of the stack remains the same.
+
+Case 3: The $n+1$ player wins some matches and loses the rest.
+
+In this case, the actual number of wins/losses will define the new participant's spot in the line. If they only beat one player, for example, and lose to the rest, they will go in the second to last spot in line (spot 1 in a line starting at spot 0), since the rest of the line now has one additional win and remains unchanged. This pattern continues for how many wins the participant earns. Three wins would put them above the previous bottom 3 players, 4 wins above 4 players, and so forth. In summary, since the addition of one player can only alter the relationships between itself and another player, not the ones that were already in existance, they simply fit in the line whenever they start to lose. Therefore, if the relationship exists for 2 players, which it clearly does, then it must exist for all $n$.
+ 
+\end{document}
