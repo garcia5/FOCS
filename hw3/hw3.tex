@@ -236,9 +236,47 @@
 
 	\item Question 4
 
+		We begin with a proof by contradiction
+
+		Assume there are a finite number of primes of form $q = 3k + 2$ \\
+
 		\begin{tabular}{ll}
-			$1 = 1$ \\
-		\end{tabular}
+
+			$Q = \{q_1, q_2, q_3, \dots q_n\}$ & Q is the set of ALL primes of 
+							     the form $2k + 1$ \\
+
+			$N = 3(q_1*q_2*\dots*q_n)+2$ & $3 \nmid N \AND q_i \nmid N, q_i \in Q$ \\ 
+
+		\end{tabular} \\
+
+		It is known that $\nexists q_i \in Q\ S.T.\ q_i | N$, since $q_i | N-2$.
+		If $q_i | N$, then $q_i | 2$, which cannot be true, since $q_i$ is an odd prime.
+
+		\begin{tabular}{ll}
+
+			$N = odd * even + even \imp N = odd$ & $2 \nmid N$ \\
+			
+		\end{tabular} \\
+
+		According to the Fundamental Theorem of Arithmtic, any integer (in this case $N$), 
+		can be represented uniquely as a product of primes. According to the initial
+		assumption, $N$ is not divisible by any $q_i \in Q$. Then if $N$ is the produt of 
+		primes of the form $p_i = 3k + 1$, $N$ would have the form $3k+1$.
+
+		\begin{tabular}{ll}
+
+			$N = 3k + 1, k \in \mathbbm{Z}$ \\
+
+			However, the premise was that $N$ is of the form $3k + 2$ \\
+
+			Therefore, $\exists p, p = 3k + 2 \AND p \not\in Q$ \\
+
+		\end{tabular} \\
+
+		Because $Q$ was defined to be the set of ALL prime numbers of the form 3k+2, we
+		have a contradiction. 
+
+		$\therefore |Q| = \infty$ \\
 
 \end{enumerate}
 
