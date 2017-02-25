@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=latex 2017.2.23)  24 FEB 2017 18:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=latex 2017.2.23)  24 FEB 2017 19:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -488,98 +488,83 @@ Now handling font encoding U ...
    defining Unicode char U+2026 (decimal 8230)
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
-))
-
-./hw3.tex:23: LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.23 \textbf{Alexander Garcia}
-                              
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./hw3.tex:25: LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.25 2
-      4 February 2017
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-(./hw3.aux)
+)) (./hw3.aux)
 \openout1 = `hw3.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Try loading font information for U+msa on input line 35.
- (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+
+Underfull \hbox (badness 10000) in paragraph at lines 26--27
+
+ []
+
+LaTeX Font Info:    Try loading font information for U+msa on input line 34.
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 35.
+LaTeX Font Info:    Try loading font information for U+msb on input line 34.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 43--44
+Underfull \hbox (badness 10000) in paragraph at lines 42--43
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 45--47
+Underfull \hbox (badness 10000) in paragraph at lines 44--46
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 50--54
+Underfull \hbox (badness 10000) in paragraph at lines 49--53
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 59--60
+Underfull \hbox (badness 10000) in paragraph at lines 58--59
 
  []
 
 [1
 
 ]
-Overfull \hbox (38.95679pt too wide) in paragraph at lines 73--86
+Underfull \hbox (badness 10000) in paragraph at lines 66--67
+
+ []
+
+
+Overfull \hbox (38.95679pt too wide) in paragraph at lines 72--85
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 73--86
+Underfull \hbox (badness 10000) in paragraph at lines 72--85
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 87--90
+Underfull \hbox (badness 10000) in paragraph at lines 86--89
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 91--97
+Underfull \hbox (badness 10000) in paragraph at lines 90--96
 
  []
 
-./hw3.tex:100: Misplaced alignment tab character &.
-l.100 ...ly possible conclusion then, is that $p &
+./hw3.tex:99: Misplaced alignment tab character &.
+l.99 		only possible conclusion then, is that $p &
                                                   =& q$. \\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -588,8 +573,8 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./hw3.tex:100: Misplaced alignment tab character &.
-l.100 ... possible conclusion then, is that $p &=&
+./hw3.tex:99: Misplaced alignment tab character &.
+l.99 ...y possible conclusion then, is that $p &=&
                                                    q$. \\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -599,12 +584,12 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 98--101
+Underfull \hbox (badness 10000) in paragraph at lines 97--100
 
  []
 
-./hw3.tex:102: Misplaced alignment tab character &.
-l.102 		$\therefore gcd(a,m) &
+./hw3.tex:101: Misplaced alignment tab character &.
+l.101 		$\therefore gcd(a,m) &
                               =& gcd(b,m)$ \\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -613,8 +598,8 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./hw3.tex:102: Misplaced alignment tab character &.
-l.102 		$\therefore gcd(a,m) &=&
+./hw3.tex:101: Misplaced alignment tab character &.
+l.101 		$\therefore gcd(a,m) &=&
                                  gcd(b,m)$ \\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -624,32 +609,37 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 102--103
+Underfull \hbox (badness 10000) in paragraph at lines 101--102
 
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 116--144
+Underfull \hbox (badness 10000) in paragraph at lines 107--108
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--167
+Underfull \hbox (badness 10000) in paragraph at lines 114--142
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 168--171
+Underfull \hbox (badness 10000) in paragraph at lines 147--165
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 166--169
 
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 176--177
+Underfull \hbox (badness 10000) in paragraph at lines 174--175
 
  []
 
-./hw3.tex:181: Undefined control sequence.
-l.181 				$gcd(3457, 4669) = d, d \in \mathbbm
+./hw3.tex:179: Undefined control sequence.
+l.179 				$gcd(3457, 4669) = d, d \in \mathbbm
                                               {Z}$ & Representation of $gcd$ \\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -658,14 +648,14 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 180--208
+Underfull \hbox (badness 10000) in paragraph at lines 178--206
 
  []
 
-./hw3.tex:231: Missing $ inserted.
+./hw3.tex:229: Missing $ inserted.
 <inserted text> 
                 $
-l.231 				$325 * 3457 - 927 * (4669 - 1 * 3457) &
+l.229 				$325 * 3457 - 927 * (4669 - 1 * 3457) &
                                                   1252 * 3457 - 927 * 4669 =...
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -673,10 +663,10 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./hw3.tex:232: Missing $ inserted.
+./hw3.tex:230: Missing $ inserted.
 <inserted text> 
                 $
-l.232 
+l.230 
       
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -685,32 +675,32 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 235--236
+Underfull \hbox (badness 10000) in paragraph at lines 233--234
 
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 243--244
+Underfull \hbox (badness 10000) in paragraph at lines 241--242
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 249--250
+Underfull \hbox (badness 10000) in paragraph at lines 247--248
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 251--259
+Underfull \hbox (badness 10000) in paragraph at lines 249--257
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 263--268
+Underfull \hbox (badness 10000) in paragraph at lines 261--266
 
  []
 
-./hw3.tex:276: Undefined control sequence.
-l.276 			$N = 3k + 1, k \in \mathbbm
+./hw3.tex:274: Undefined control sequence.
+l.274 			$N = 3k + 1, k \in \mathbbm
                                     {Z}$ \\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -719,64 +709,43 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 274--283
+Underfull \hbox (badness 10000) in paragraph at lines 272--281
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 287--288
+Underfull \hbox (badness 10000) in paragraph at lines 285--286
 
  []
 
 [5]
-Overfull \hbox (21.30939pt too wide) in paragraph at lines 298--338
+Underfull \hbox (badness 10000) in paragraph at lines 291--292
+
+ []
+
+
+Overfull \hbox (21.30939pt too wide) in paragraph at lines 295--335
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 339--340
+Underfull \hbox (badness 10000) in paragraph at lines 336--337
 
  []
 
 [6]
+Underfull \hbox (badness 10000) in paragraph at lines 342--343
 
-./hw3.tex:351: LaTeX Error: Something's wrong--perhaps a missing \item.
+ []
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.351 \end{enumerate}
-                     
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./hw3.tex:353: LaTeX Error: \begin{enumerate} on input line 29 ended by \end{do
-cument}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.353 \end{document}
-                    
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-[7] (./hw3.aux) )
-(\end occurred inside a group at level 1)
-
-### semi simple group (level 1) entered at line 29 (\begingroup)
-### bottom level 
+[7] (./hw3.aux) ) 
 Here is how much of TeX's memory you used:
  2555 strings out of 493014
  32755 string characters out of 6135708
- 91930 words of memory out of 5000000
+ 91901 words of memory out of 5000000
  6081 multiletter control sequences out of 15000+600000
  8596 words of font info for 33 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 27i,8n,26p,219b,287s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 27i,8n,26p,219b,285s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on hw3.dvi (7 pages, 12944 bytes).
+Output written on hw3.dvi (7 pages, 13900 bytes).
