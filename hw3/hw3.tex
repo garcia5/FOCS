@@ -31,23 +31,17 @@
 
 		\begin{enumerate}[(a)]
 
-			\item $-17\ mod\ 4 = 3$
-
-			$1 = a *_4 -17 (mod\ 4)$
-
-			$1 = a * _4 3$
-
-			$(3a)(mod\ 4) = 1$
+			\item $a *_4 -17 = 1$
 
 			$a = 3$\\
 
-			In this case, $m$ must equal $4$, since it is the modulo of the original value for
-			``$b$''. The equation can then be easily solved for $a$, which could be 3. \\
+			Here, a value of $a=3$ makes $(-17 * a)\ mod\ 4$ a true statement. $-51\ mod\ 4 = 1$ \\
+
 
 			\item $-17 \div 4 = -5\ rem\ 3$
 
-			This follows from the definition of the modulo operator, where when $a\ mod\ b$,
-			this means that $a = bq + r$, where $r$ is always a positive integer. Since $r$ must
+			This follows from the definition of the modulo operator, where $a\ mod\ b$
+			means that $a = bq + r$, and $r$ is always a positive integer. Since $r$ must
 			be positive, we obtain the value $-20$ from $bq$, giving us the smallest positive $r$.
 			Therefore, $a = 3$. \\
 
@@ -55,7 +49,9 @@
 
 			$4 | (a+17)$
 
-			$a = 3$ \\
+			$a = 3$
+
+			$4 | 20$ \\
 
 		\end{enumerate}
 
@@ -72,7 +68,7 @@
 		\begin{tabular}{ll}
 			$m\ |\ a-b$ & Definition of congruency \\
 
-			$\exists c, mc = a-b$ & Definition of the ``divisible`` operator \\ 
+			$\exists c \in \mathbb{Z}, mc = a-b$ & Definition of the ``divisible`` operator \\ 
 
 			$p = gcd(a,m); q = gcd(b,m)$ & Assignment of gcd operations \\
 
@@ -140,8 +136,7 @@
 
 			\end{tabular} \\
 
-			These two numbers are relatively prime since their gcd = 1. We must now go ``backwards''
-			through these steps and find the coefficients associated with the two numbers ($s$, $t$)
+			We must now go ``backwards'' through these steps and find the coefficients associated with the two numbers ($s$, $t$)
 			to make $124s + 323t = 1$ true.
 
 			\begin{tabular}{ll}
@@ -230,7 +225,7 @@
 
 			\end{tabular}
 
-			Bazout Coefficients: $s = 1252, t = -927$ \\ 
+			Bezout Coefficients: $s = 1252, t = -927$ \\ 
 
 		\end{enumerate}
 
@@ -248,15 +243,14 @@
 
 		\begin{tabular}{ll}
 
-			$Q = \{q_1, q_2, q_3, \dots q_n\}$ & Q is the set of ALL primes of 
-							     the form $2k + 1$ \\
+			$Q = \{q | q \in \mathbb{P} \cap 3\mathbb{N}+2\}$& Q is the set of ALL primes of the form $3k + 2$ \\
 
 			$N = 3(q_1*q_2*\dots*q_n)+2$ & $3 \nmid N \AND q_i \nmid N, q_i \in Q$ \\ 
 
 		\end{tabular} \\
 
-		It is known that $\nexists q_i \in Q\ S.T.\ q_i | N$, since $q_i | N-2$.
-		If $q_i | N$, then $q_i | 2$, which cannot be true, since $q_i$ is an odd prime.
+		It is known that $\nexists q_i \in Q (q_i | N)$, since $q_i | N-2$.
+		If $q_i | N$, then $q_i | 2$, which cannot be true, since $q_i$ is an odd prime. \\
 
 		\begin{tabular}{ll}
 
@@ -266,21 +260,21 @@
 
 		According to the Fundamental Theorem of Arithmtic, any integer (in this case $N$), 
 		can be represented uniquely as a product of primes. According to the initial
-		assumption, $N$ is not divisible by any $q_i \in Q$. Then if $N$ is the produt of 
-		primes of the form $p_i = 3k + 1$, $N$ would have the form $3k+1$.
+		assumption, $\forall q \in Q(q \nmid N)$. Then $N$ must be the produt of 
+		primes of the form $p_i = 3k + 1$, and would have the form $3k+1$. \\
 
 		\begin{tabular}{ll}
 
-			$N = 3k + 1, k \in \mathbbm{Z}$ \\
+			$N = 3k + 1, k \in \mathbb{Z}$ \\
 
 			However, the premise was that $N$ is of the form $3k + 2$ \\
 
-			Therefore, $\exists p, p = 3k + 2 \AND p \not\in Q$ \\
+			$\therefore \exists p, p = 3k + 2 \AND p \not\in Q$ \\
 
 		\end{tabular} \\
 
 		Because $Q$ was defined to be the set of ALL prime numbers of the form 3k+2, we
-		have a contradiction. 
+		have a contradiction.
 
 		$\therefore |Q| = \infty$ \\
 
@@ -349,7 +343,12 @@
 
 			$\bigcup\limits_{i = 1}^{\infty} A_i = \{1, 2, 3, \dots\}$
 
-			$\bigcap\limits_{i = 1}^{\infty} A_i = \{1, 2, 3, \dots\}$ 
+			$\bigcap\limits_{i = 1}^{\infty} A_i =$ '$\infty$'  
+
+			Because of the way $A_i$ is defined, the only number that is common amongst all the sets
+			is ``the largest number'', which is not exactly a real thing. $A_1 \cap A_2 = [2, \infty)$
+			$A_1 \cap A_2 \cap A_3 = [3, \infty)$, and so on. Each time $i$ increments, the final set loses
+			the lowest vale, thus just leaving the ``highest number'', represented here as $\infty$.
 
 		\item $A_i = \{0, i\}$ 
 
