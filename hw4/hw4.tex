@@ -95,6 +95,8 @@
 
 		\end{enumerate}
 
+	\newpage
+
 	\textbf{Alexander Garcia}
 
 	9 March 2017 \\
@@ -217,13 +219,29 @@
 
 			\item $a_n = n^5$
 
-				$a_0 = 0$
+				$\{a_n\} = \{1, 32, 243, 1024, \dots, n^5\}$
 
-				$a_1 = 1$
+				$a_n = n^5 = x$
 
-				$a_2 = 32$
+				$n = x^{\frac{1}{5}}$
 
-				$a_3 = 243$ \\
+				$a_{n+1} = (n+1)^5$
+
+				$(n+1)^5 = n^5 + 5n^4 + 10n^3 + 10n^2 + 5n + 1$
+
+				$n = x^{\frac{1}{5}}$, from before
+
+				Substitute $x$ into $(n+1)^5$
+
+				$= x + 5x^{\frac{4}{5}} + 10x^{\frac{3}{5} } + 10x^{\frac{2}{5} }+
+				5x^{\frac{1}{5} } + 1$
+
+				Rewrite in terms of $a_n$ and $a_{n-1}$
+
+				$$a_n = a_{n-1} + 1 + 5(a_{n-1}^{\frac{4}{5}} + 2a_{n-1}^{\frac{3}{5} }+
+				2a_{n-1}^{\frac{2}{5} } + a_{n-1}^{\frac{1}{5} })$$
+
+				With the initial condition being that $a_0 = 0$. \\
 
 			\item $a_n = n^2 + n$
 
@@ -274,7 +292,7 @@
 
 	\textbf{Alexander Garcia}
 
-	9 March 2017
+	9 March 2017 \\
 
 	\item Question 5
 
@@ -323,7 +341,7 @@
 
 	\textbf{Alexander Garcia}
 
-	9 March 2017
+	9 March 2017 \\
 
 	\item Question 6
 
