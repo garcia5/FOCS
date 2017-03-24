@@ -85,6 +85,51 @@
 
 	\item Question 2
 
+		Proof by mathematical induction
+
+		Base Case: $P(3) := \frac{3(2)(1)}{6} = 1$
+
+		This is true, since a set of size 3 can only have
+		one subset of size 3. \\
+
+		Inductive Step: Assume a set $S$ of size $n$ has
+		$\frac{n(n-1)(n-2)}{6}$ subsets of size 3. Also
+		it is given that $S$ has $\frac{n(n-1)}{2}$ subsets
+		of size 2. \\
+
+		$R = S + \{x_{n+1}\}$
+
+		$|R| = n+1$
+
+		$S \subset R$
+
+		By adding the new element $\{x_{n+1}\}$, $R$ now
+		has a certain number of subsets of size 3 that
+		contain $\{x_{n+1}\}$, and a certain number that do
+		not.
+
+		The number of subsets of size 3 without the new
+		element is simply the number of size 3 subsets in
+		$S$.
+
+		$S$ has $\frac{n(n-1)}{2}$ subsets of size 2, as
+		given by the problem.
+
+		The number of subsets of size 3 that include the
+		new element is also $\frac{n(n-1)}{2}$. This is due
+		to the fact that $S$ and $R$ are identical, save
+		the new element. By adding the new element to every
+		size 2 subset in $S$, one can generate every size
+		3 subset containing $\{x_{n+1}\}$ in $R$.
+
+		Thus, the number of size 3 subsets in $R$ is
+		$\frac{n(n-1)(n-2)}{6} + \frac{n(n-1)}{2} =
+		\frac{n(n+1)(n-1)}{6}$
+
+		$P(n+1):=\frac{n(n+1)(n-1)}{6}$
+
+		$\therefore P(n) \rightarrow P(n+1)$
+
 		\newpage
 
 		\textbf{Alexander Garcia}
@@ -93,6 +138,48 @@
 
 	\item Question 3
 
+		Proof by Strong Induction
+
+		Base Cases:
+
+		$n = 1: 1 \leq 2$
+
+		$n = 2: 2 \leq 4$
+
+		$n = 3: 3 \leq 8$ \\
+
+		Inductive Hypothesis:
+
+		$P(n):= a_{n-1}+a_{n-2}+a_{n-3} \leq 2^n$ \\
+
+		$a_{n+1} = a_n + a_{n-1} + a_{n-2}$
+
+		$a_n = a_{n-1} + a_{n-2} + a_{n-3}$
+
+		Substitute in $a_n$
+
+		$a_{n+1} = 2a_{n-1} + 2a_{n-2} + a_{n-3}$
+
+		$2a_{n-1} + 2a_{n-2} + a_{n-3} <
+		2(a_{n-1} + a_{n-2} + a_{n-3})$
+
+		$2^{n+1} = 2^n * 2$
+
+		We just showed that $a_{n+1} < 2*a_n$
+
+		$2*a_n \leq 2*2^n$, since by the inductive
+		hypothesis, $a_n \leq 2^n$
+
+		So
+
+		$a_{n+1} < 2*a_n \leq 2*2^n$
+
+		Simplifying this down,
+
+		$a_{n+1} \leq 2^{n+1} = P(n+1)$
+
+		$\therefore P(n) \rightarrow P(n+1)$
+
 		\newpage
 
 		\textbf{Alexander Garcia}
@@ -100,6 +187,46 @@
 		29 March 2017 \\
 
 	\item Question 4
+
+		Proof by Strong Induction
+
+		Base Case:
+
+		$20 = 5r + 6s$
+
+		$r = 4, s = 0$ \\
+
+		Inductive Hypothesis:
+
+		$\forall n \in \mathbb{Z}_{>20}\ n = 5r + 6s$ \\
+
+		$21 = 5(3) + 6(1)$
+
+		$22 = 5(2) + 6(2)$
+
+		$23 = 5(1) + 6(3)$
+
+		$24 = 5(0) + 6(4)$
+
+		We now let $r_n$ represent the $r$ coefficient
+		used in the construction of $n$, and $b_n$
+		represent the $b$ coefficient of $n$
+
+		$25 = 5(5) + 6(0)$
+
+		$25 = 5(r_{20}+1) + 6(b_{20})$
+
+		$n = 5(r_n) + 6(b_n)$
+
+		$n+5 = 5(r_n + 1) + 6(b_n)$
+
+		By increasing a number by 5, the only change that
+		needs to be made to its $r$ value is to increase
+		it by 1. The $b$ value can remain the same.
+		Therefore, $P(n) \rightarrow P(n+5)$
+
+		By proving the first 4 base cases, we then have
+		proven $P(n) \forall n \geq 20$.
 
 		\newpage
 
@@ -113,9 +240,76 @@
 
 			\item
 
-			\item
+				Basis Step:
+
+				For $T$ of size 1, $H(T) = 0$
+
+				Recursive Step:
+
+				For $T = T_1 \bullet T_2 \bullet
+				T_3$,
+
+				$H(T) =
+				max(H(T_1), H(T_2), H(T_3)) + 1$ \\
 
 			\item
+
+				Basis Step:
+
+				For $T$ that is a single vertex,
+				$N(T) = 1$
+
+				Recursive Step:
+
+				For $T = T_1 \bullet T_2 \bullet
+				T_3$,
+
+				$N(T)=1+N(T_1) + N(T_2) + N(T_3)$\\
+
+			\item
+
+		Base Case:
+
+		For $T$ of one vertex $r$
+
+		$N(T) = 1$
+
+		$H(T) = 0$
+
+		$3^{H(T)+1}-1 = 2$
+
+		$1<2$ \\
+
+		Inductive Hypothesis:
+
+		For a full ternary tree $T$,
+
+		$N(T) \leq 3^{H(T)+1}-1$ \\
+
+		Recursive Step:
+
+		$T = T_1 \bullet T_2 \bullet T_3$
+
+		$N(T) = 1 + N(T_1) + N(T_2) + N(T_3)$
+
+		$N(T) \leq 1 + (3^{H(T_1)+1}-1) + (3^{H(T_2)+1}-1)
+		+ (3^{H(T_3)+1}-1)$, by the inducive hypothesis
+
+		$N(T) \leq 3 * max(3^{H(T_1)+1}, 3^{H(T_2)+1}, 3^{H(T_3)+1}) - 2$ \\
+
+		This is true since the sum of these three terms cannot be
+		more than $3*$ the largest term. \\
+
+		$max(3^{H(T_1)+1}, 3^{H(T_2)+1}, 3^{H(T_3)+1}) =
+		3^{max(H(T_1), H(T_2), H(T_3)) + 1}$
+
+		$3^{max(H(T_1), H(T_2), H(T_3)) + 1} = H(T)$
+
+		Substituting this into the earlier equation gives us
+
+		$N(T) \leq 3 * 3^{H(T)} - 2$
+
+		$N(T) \leq 3^{H(T)+1} - 2 < 3^{H(T)+1} - 1$
 
 		\end{enumerate}
 
