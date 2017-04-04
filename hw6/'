@@ -49,31 +49,12 @@
 
 			\item Let $\mathbb{S}$ be the set of bit strings with an even number of zeros
 
-				Note: This question is done assuming that a string of zero length
-				has an even number of zeros.
+				Note: This question is done assuming that a string of length 0 is not
+				a string, and therefore is not a valid base case.
 
-				Basis Step: $\emptyset \in \mathbb{S}$
+				Basis Case: 
 
-				Recursive Step: $x \in \mathbb{S}$
-
-				$1x \in \mathbb{S}$
-
-				$x1 \in \mathbb{S}$
-
-				$00x, 0x0, x00 \in \mathbb{S}$
-
-				Adding a 1 to the string will not affect the number of zeros, so the string
-				is still valid. Adding two zeros in any location will then maintain an
-				even number of zeros. \\
-
-			\item Let $\mathbb{S}$ be the set of strings of even length
-				from the alphabet $\Sigma = \{a, b\}$
-
-				Basis Step: $\emptyset \in \mathbb{S}$
-
-				Recursive Step: $X \in \mathbb{S}$
-
-				$Xaa, Xab, Xba, Xbb \in \mathbb{S}$
+			\item
 
 		\end{enumerate}
 
