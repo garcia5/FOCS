@@ -163,9 +163,47 @@
 
 		\begin{enumerate}[(a)]
 
-			\item
+			\item A 10 bit string with fewer ones than zeros has either
+				6, 7, 8, 9, or 10 zeros.
 
-			\item
+				The number of bit strings with exactly 6 zeros is
+				$C(10, 6) = \frac{10!}{6!(10-6)!}=210$
+
+				With 7 zeros:
+				$C(10, 7) = \frac{10!}{7!(10-7)!}=120$
+
+				With 8 zeros:
+				$C(10, 8) = \frac{10!}{8!(10-8)!}=45$
+
+				Wtih 9 zeros:
+				$C(10, 9) = \frac{10!}{9!(10-9)!}=10$
+
+				Wtih 10 zeros:
+				$C(10, 10) = 1$
+
+				The sum of these is the total number of bit strings of
+				length 10 with fewer ones than zeros
+
+				$210+120+45+10+1 = 386$ \\
+
+			\item We can determine the number of length 10 bit strings with
+				at least 5 consecutive ones or zeros by treating each group of 5
+				as a single item. This changes the number of positions from
+				10 to 6.
+
+				When the 5 bit sequence starts at the beginning of the string, there
+				are $2^5$ possible strings. However, because the rest of the string
+				could contain more zeros, we must avoid counting some combinations twice.
+
+				This means that the sequence being in positions 2-6 only have $2^4$ new
+				possible strings associated with them.
+
+				The same principle applies for a sequence of ones. The only remaining overlap
+				is for the strings 0000011111 and 1111100000, as they are counted by both
+				the sequences of 5 ones and 5 zeros.
+
+				Therefore, the total number of length 10 bit strings is
+				$2*(2^5 + 5*2^4) - 2 = 222$
 
 		\end{enumerate}
 
@@ -179,9 +217,27 @@
 
 		\begin{enumerate}[(a)]
 
-			\item
+			\item Treat the problem as $w+x+y+z+u = 100$
 
-			\item
+				The number of solutions to this problem is
+				the same as the number of ways one can select
+				$n_1$ of w, $n_2$ of x, $n_3$, of y, $n_4$ of z,
+				and $n_5$ of u, where $n_1+n_2+n_3+n_4+n_5 = 100$
+
+				This is equal to the number of 100 combinations from
+				a set of 5 elements.
+
+				$\binom{5+100-1}{100} = \binom{104}{100}$
+
+				According to Theorem 2 from the text, $\binom{n+r-1}{r}=
+				\binom{n+r-1}{n-1}$
+
+				So, the number of solutions for this equation is
+				$\binom{104}{4} = \frac{104!}{4!(100!)} = 4598126$ \\
+
+			\item Again, treat the problem as $w+x+y+z+u = 100$
+
+				This time, $x>1$ or $y>1$
 
 		\end{enumerate}
 
