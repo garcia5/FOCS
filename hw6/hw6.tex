@@ -128,6 +128,31 @@
 
 	\item Question 3
 
+		Take an arbitrary vertex $V_1$
+
+		Because the graph is complete, $V_1$ shares an edge (i.e. has some
+		relationship with) all of the eight other vertices.
+
+		It is given that in any complete, two color, 9 vertex graph, there is
+		at least one node incident to 6 red edges, or 4 blue edges. We will
+		then assume that this is the case for $V_1$
+
+		We then consider the set of 6 friends of $V_1$, from the previous
+		statement. This ``sub graph'' can be treated as its own 6 vertex
+		party, which had been covered previously.
+
+		For a 6 vertex graph, it is known that there exists a 3-clique of either
+		friends or enemies.
+
+		If there is a 3 clique of friends, and all members of the clique are also
+		friends with $V_1$, then we have found a 4-clique of friends (red edges)
+
+		If there is a 3 clique of enemies, then we have found the 3-clique of enemies
+		we were looking for in the beginning.
+
+		$\therefore$ Any complete 2-colored graph with 9 vertices contains either a
+		red 4-clique or a blue 3-clique \\
+
 		\newpage
 
 		\textbf{Alexander Garcia}
