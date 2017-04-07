@@ -239,6 +239,29 @@
 
 				This time, $x>1$ or $y>1$
 
+				In order to solve, find the number of solutions that
+				result from $x, y=0$, and the number that result
+				$x, y = 1$.
+
+				Using the ``stars and bars'' method for finding these combinations,
+				the number of remaining variables is 4 $(w, y, z, u)$ or $(w, x, z, u)$,
+				depending on which is chosen.
+
+				If $x$ or $y$ is zero, the remaining 4 variables
+				must sum to the original 100. This makes the number of options
+				$\binom{103}{3} = 176851$.
+
+				If $x$ or $y$ is one, the remaining 4 variables
+				must sum to 99. This makes the number of options
+				$\binom{102}{3} = 171700$
+
+				The original number of possible solutions to this problem was
+				$4598126$. This minus the sum of the two ``illegal''
+				combinations, is the number of solutions to the equation
+				where $x>1$ or $y>1$. \\
+
+				$4598126 - (176851 + 171700) = 4249575$ possible solutions.
+
 		\end{enumerate}
 
 		\newpage
@@ -251,11 +274,27 @@
 
 		\begin{enumerate}[(a)]
 
-			\item
+			\item The number of different words formed by the letters
+				in ``PEPPERONI'' is the same as placing distinguishable
+				objects in distinguishable boxes.
 
-			\item
+				The formula for this is that for objects in $k$ boxes
+				is $\frac{k!}{n_1!*n_2!*n_3!*\dots*n_k!}$, where $n_i$ is
+				the number of occurrances of that object (in this case, how
+				many times the letter is repeated).
 
-			\item
+				$\frac{9!}{3!*2!*1!*1!*1!*1!} = 30250$ \\
+
+			\item When the word is required to begin and end with P,
+				this leaves 7 boxes, and only 1 remaining use of P.
+
+				$\frac{7!}{2!*1!*1!*1!*1!*1!} = 2520$
+
+			\item When all three P's are consecutive, we can treat the
+				group as one object. This leaves us with 7 boxes,
+				and only 6 objects, E being the only one repeated.
+
+				$\frac{7!}{2!*1!*1!*1!*1!} = 2520$
 
 		\end{enumerate}
 
