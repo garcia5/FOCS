@@ -100,14 +100,25 @@
 
 					Of the remaining flips, there must be exactly one more tail result than heads.
 					This number of strings is $C(n-1, \lceil{\frac{n}{2} -1}\rceil)$, where
-					$\lceil{\frac{n}{2} -1}\rceil = \frac{n}{2}$, since $n$ must be odd.
+					$\lceil{\frac{n}{2} -1}\rceil = \frac{n-1}{2}$, since $n$ must be odd.
 
-					Probability = $\frac{\frac{(n-1)!}{(\frac{n-1}{2})!(\frac{n-1}{2})!}}{2^{n-1}} =
-					\frac{\frac{n}{n/2}}{2} * \frac{\frac{n!}{(n/2)!(n/2)!}}{2^n} $
+					Probability = $\frac{\frac{(n-1)!}{(\frac{n-1}{2})!(\frac{n-1}{2})!}}{2^{n-1}}
+					* \frac{\frac{n}{n/2}}{2} = \frac{\frac{n!}{(n/2)!(n/2)!}}{2^n} $
 
 					Since the ratios are the same, the probabilities are the same. \\
 
-				\item
+				\item $E(X) = \sum_{t \in S}{p(t)X(t)}$
+
+					$X(t) = \sum_{i = 1}^{n}X_i(t)$
+
+					$E(X) = \sum_{i = 1}^{n}{(\sum_{j = 1}^{i}{0.5 * 2} + \sum_{j = 1}^{i}{0.5 * -1})}$
+
+					$=\sum_{i = 1}^{n}{i - \frac{i}{2} } = \sum_{i = 1}^{n}{\frac{i}{2} }$ \\
+
+					The expected value is the sum of all the possibilities that the random variable $X(T)$ can take,
+					weighted by their probabilities. There is a $0.5$ probability that a flip will come up heads, and the
+					same for tails. Here, $n$ would be the maximum number of flips, and $i$ is the number of flips for
+					the current trial.
 
 			\end{enumerate}
 \newpage
