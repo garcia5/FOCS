@@ -91,7 +91,7 @@
 					There are $2^n$ total possible outcomes of flipping the coin $n$ times, and
 					$C(n, \frac{n}{2})$ of these will have an even number of heads and tails.
 
-					The probability is then $\frac{n!}{(n/2)!(n/2)!(2^n)} $. \\
+					The probability is then $\frac{\frac{n!}{(n/2)!(n/2)!}}{2^n} $. \\
 
 				\item It will not affect the original probability.
 
@@ -102,8 +102,8 @@
 					This number of strings is $C(n-1, \lceil{\frac{n}{2} -1}\rceil)$, where
 					$\lceil{\frac{n}{2} -1}\rceil = \frac{n}{2}$, since $n$ must be odd.
 
-					Probability = $\frac{(n-1)!}{(n/2)!(n/2)!(2^{n-1}) } =
-					\frac{n}{2} * \frac{n!}{(n/2)!(n/2)!(2^n)} $
+					Probability = $\frac{\frac{(n-1)!}{(\frac{n-1}{2})!(\frac{n-1}{2})!}}{2^{n-1}} =
+					\frac{\frac{n}{n/2}}{2} * \frac{\frac{n!}{(n/2)!(n/2)!}}{2^n} $
 
 					Since the ratios are the same, the probabilities are the same. \\
 
