@@ -4,6 +4,7 @@
 \usepackage{mathtools}
 \usepackage{fullpage}
 \usepackage[utf8]{inputenc}
+\usepackage{amsmath}
 
 %Symbol shortcuts
 \def\OR{\vee}
@@ -54,9 +55,23 @@
 
 			\begin{enumerate}[(a)]
 
-				\item
+				\item Probability Distribution: $\sum_{s \in S}{p(s)} = 1$
 
-				\item
+					$p(100) = 5p(n), n \in \{1, 2, \cdots, 99\}$
+
+					$p(1) = p(2) = \cdots = p(99)$
+
+					$99*p(1) + 5*p(1) = 1$
+
+					$104*p(1) = 1$ \\
+
+					$p(i) = \frac{1}{104}, i \in \{1, 2, \cdots, 99\}$
+
+					$p(100) = \frac{5}{104}$ \\
+
+				\item For any one roll, the $p(100) = \frac{5}{104}$. Thus, the
+					probability of rolling a 100 in any n rolls is $\frac{5n}{104}$, since
+					the probability each time compounds, adding another $\frac{5}{104}$
 
 			\end{enumerate}
 \newpage
@@ -68,9 +83,29 @@
 
 			\begin{enumerate}[(a)]
 
-				\item
+				\item In order for a bit string of length $n$ to contain an equal number of 1's and 0's,
+					it must have $\frac{n}{2}$ of each (1, 0 are treated as heads and tails over n flips).
+					For a bit string of length $n$ there are $C(n, \frac{n}{2})$ strings with equal 1's and
+					0's.
 
-				\item
+					There are $2^n$ total possible outcomes of flipping the coin $n$ times, and
+					$C(n, \frac{n}{2})$ of these will have an even number of heads and tails.
+
+					The probability is then $\frac{n!}{(n/2)!(n/2)!(2^n)} $. \\
+
+				\item It will not affect the original probability.
+
+					Limiting the first flip to heads limits the number of total
+					possible outcomes to $2^{n-1}$.
+
+					Of the remaining flips, there must be exactly one more tail result than heads.
+					This number of strings is $C(n-1, \lceil{\frac{n}{2} -1}\rceil)$, where
+					$\lceil{\frac{n}{2} -1}\rceil = \frac{n}{2}$, since $n$ must be odd.
+
+					Probability = $\frac{(n-1)!}{(n/2)!(n/2)!(2^{n-1}) } =
+					\frac{n}{2} * \frac{n!}{(n/2)!(n/2)!(2^n)} $
+
+					Since the ratios are the same, the probabilities are the same. \\
 
 				\item
 
