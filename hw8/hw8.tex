@@ -1,0 +1,81 @@
+\documentclass[11pt]{article}
+\usepackage{color, array, graphics}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{mathtools}
+\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+
+%Symbol shortcuts
+\def\OR{\vee}
+\def\AND{\wedge}
+\def\imp{\rightarrow}
+
+%Aesthetics
+\addtolength{\oddsidemargin}{-.5in}
+\addtolength{\evensidemargin}{-.5in}
+
+\addtolength{\topmargin}{-.5in}
+
+\begin{document}
+
+\textbf{Alexander Garcia}
+
+3 May 2017
+
+	\begin{enumerate}
+
+			\item Question 1
+
+				\begin{enumerate}[(a)]
+
+					\item
+
+						$S \rightarrow 00S1$
+
+						$S \rightarrow 1S00$
+
+						The first two are clear rules of the language. When adding a single 1,
+						you must also add two 0's \\
+
+						$S \rightarrow SS$
+
+						Concatenating two existing strings in the grammar will also produce a vaild string.
+						Both have the correct relationship between 1's and 0's, so the relationship does not
+						change when they are combined \\
+
+
+						$S \rightarrow 0S1S0$
+
+						The forth rule allows the concatenation of two existing strings, and adding two 0's and a 1,
+						allowing for ``random'' placement of 1's and 0's. \\
+
+
+						$S \rightarrow \lambda$
+
+						The fifth rule allows for the termination of a derivation \\
+
+					\item 	\begin{tabular}{ll}
+
+						$S \rightarrow 00S1$ & Rule 1 \\
+
+						$00S1 \rightarrow 00[1S00]1$ & Rule 2 \\
+
+						$00[1S00]1 \rightarrow 00[1[0S1S0]00]1$ & Rule 4 \\
+
+						$00[1[0S1S0]00]1 \rightarrow 001010001$ & Rule 5 for both $S$ \\
+
+					\end{tabular}
+
+				\end{enumerate}
+
+			\item Question 2
+
+	\end{enumerate}
+
+\end{document}
+
+
