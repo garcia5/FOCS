@@ -170,9 +170,42 @@
 
 			\begin{enumerate}[(a)]
 
-				\item Step 0: Determine initial state (either 1 or 0 based on first digit)
+				\item The main idea behind this machine is to erase pairs of 1's and 0's. \\
 
-					Step 1: If the next digit is the same
+					Start cycling through the tape. If you see a 1, remove it, then continue cycling until you reach a
+					0 or the end. If you reach a 0, remove it as well, and start searching for another 1, repeating the process. \\
+
+					If you reach the end of the input string, start over at the beginning and repeat the process of removing one 1, skipping
+					to the next 0, then removing that 0. If you are able to make it to the end of the tape without removing any digits, you have
+					reached a conclusion. If there are only 0's left, the machine enters the accept state, as there were more 0's than 1's. If there
+					are no digits left, there were exactly as many 0's as there were 1's, and the machine enters the reject state, as it only recognizes
+					words with more 0's than 1's. If there are 1's remaining, it enters the reject state also. \\
+
+				\item The runtime of this machine is as follows.
+
+					$r = n + m$
+
+					m = number of 1's, n = number of 0's, r = length of the string
+
+					The worst case runtime would be if there are equal numbers of 1's and 0's, or $m=n=\frac{r}{2}$. Because of the way this machine
+					operates, the worst case order of digits would be $\frac{r}{2} 1$'s followed by $\frac{r}{2} 0$'s, as the machine would then only
+					remove 2 items per pass.
+
+					So, the machine would read $r$ digits the first pass, $r-2$ digits the second pass, $r-4$ the third, and so on.
+
+					This summation is $\sum_{i=1}^{r/2}{r-2j} = \frac{1}{4} (r-2)*r$
+
+					In terms of order notation, this makes the algorithm $O(r^2)$ \\
+
+			\end{enumerate}
+
+			\newpage
+
+			\textbf{Alexander Garcia}
+
+			3 May 2017 \\
+
+		\item Question 4
 
 	\end{enumerate}
 
