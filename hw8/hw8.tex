@@ -24,7 +24,7 @@
 
 \textbf{Alexander Garcia}
 
-3 May 2017 \\
+5 May 2017 \\
 
 	\begin{enumerate}
 
@@ -76,7 +76,7 @@
 
 				\textbf{Alexander Garcia}
 
-				3 May 2017 \\
+				5 May 2017 \\
 
 			\item Question 2
 
@@ -164,7 +164,7 @@
 
 			\textbf{Alexander Garcia}
 
-			3 May 2017 \\
+			5 May 2017 \\
 
 		\item Question 3
 
@@ -203,9 +203,78 @@
 
 			\textbf{Alexander Garcia}
 
-			3 May 2017 \\
+			5 May 2017 \\
 
 		\item Question 4
+
+		\begin{enumerate}[(a)]
+
+			\item $L = \{w\#w^R\#w |w \in \{a,b\}^+\}$
+
+				Assuming the input string $w$ is on a single tape, and there is one empty string for reading/writing
+
+				\begin{enumerate}[(1)]
+
+					\item 	Jump across the tape, going from the first position on the input tape to the first
+						position after the 2nd $\#$
+
+					\item 	Repeat this process until the left side reaches a break ($\#$)
+
+					\item 	If the two sides differ at any point, reject the input, as the string does not appear on
+						either side of two $\#$s
+
+					\item 	If each side had the same symbol up to that point, start working backwards from the
+						$\#$ to the start of the input tape, writing the character to the head of the second tape
+
+					\item 	Iterate through the input tape again, starting this time from the first position after the
+						first $\#$. Compare these inputs to those written to the secondary tape until the next
+						$\#$ is reached. If they differ at any point, reject the input. If they are identical,
+						accept the input \\
+
+				\end{enumerate}
+
+			\item Worst case runtime for this machine
+
+				The machine searches for a pattern of length $w$. For each string it tests (input up to the first $\#$), it
+				must test another string of the same length, checking the string will in fact repeat. It must then read
+				backwards through $w$ positions while it writes to the second tape. It then compares $w$ characters from the
+				reversed string to the middle segment.
+
+				One cycle = (beginning string + repeated string) + backwards read/write + middle compare
+
+				$O(w) = 4w$
+
+		\end{enumerate}
+			\newpage
+
+			\textbf{Alexander Garcia}
+
+			5 May 2017 \\
+
+		\item Question 5
+
+			In order for $\mathbb{N} \times \mathbb{N}$ to be countable, every pair of numbers $(\mathbb{N}, \mathbb{N})$ must
+			map to a unique element of $\mathbb{N}$
+
+			$\mathbb{N}$ is countable by definition, since a set is countable if every element in the set can be mapped to
+			$\mathbb{N}$
+
+			Take a number $k = 2^x*3^y$ where $k,x,y \in \mathbb{N}$
+
+			According to the fundamental theorem of arithmetic, this is the only prime factorization of $k$, and therefore
+			the only possible values of $x$ and $y$
+
+			We treat this as the function $f(x,y) = 2^x*3^y$
+
+			$x,y$ are each in the domain $\mathbb{N}$, giving the function $f(x,y)$ the domain of $\mathbb{N}^2$
+
+			The right side of the function maps each combination of $(x,y)$ to a single value of $\mathbb{N}$
+
+			The function maps $\mathbb{N}^2 \rightarrow \mathbb{N}$
+
+			\begin{center}
+			$\therefore \mathbb{N} \times \mathbb{N}$ is countable
+			\end{center}
 
 	\end{enumerate}
 
